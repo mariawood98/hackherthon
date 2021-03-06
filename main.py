@@ -1,26 +1,20 @@
 import speech_recognition as sr
 import webbrowser as wb
+import pywhatkit
+import datetime
 r1 = sr.Recognizer()
 r2 = sr.Recognizer()
 r3 = sr.Recognizer()
-
+now = datetime.datetime.now()
+print("type in contact number: ")
+contact_number = input()
 with sr.Microphone() as source:
     print("speak now")
     audio = r3.listen(source)
 
-if 'weather' in r2.recognize_google(audio):
+if 'hello' in r2.recognize_google(audio):
     r2 = sr.Recognizer()
-    url = 'https://www.facebook.com/'
-    with sr.Microphone() as source:
-        print('query')
-        audio = r2.listen(source)
-
-        try:
-            get=r2.recognize_google(audio)
-            print(get)
-            wb.get().open_new(url+get)
-        except sr.UnknownValueError:
-            print('error')
-        except sr.RequestError as e:
-            print('failed'.format(e))
-
+    if 'maddie' in r2.recognize_google(audio):
+        pywhatkit.sendwhatmsg("contact_number", "hi", now.hour, now.minute+2)
+    elif 'cathy' in r2.recognize_google(audio):
+        pywhatkit.sendwhatmsg("+contact_number", "hi", now.hour, now.minute+2)
