@@ -12,11 +12,11 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'django-heroku'
+NAME = 'codefun'
 DESCRIPTION = 'This is a Django library for Heroku apps.'
-URL = 'https://github.com/heroku/django-heroku'
-EMAIL = 'kreitz@salesforce.com'
-AUTHOR = 'Kenneth Reitz'
+URL = 'https://github.com/mariawood98/hackherthon'
+EMAIL = 'mariawood98@hotmail.com'
+AUTHOR = 'Julia Dabrowska'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -32,7 +32,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 # Import the README and use it as the long-description.
 # Note: this will only work if 'README.rst' is present in your MANIFEST.in file!
-with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
+with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 # Load the package's __version__.py module as a dictionary.
