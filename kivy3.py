@@ -22,7 +22,6 @@ from kivy.uix.scatter import Scatter
 from kivy.uix.label import Label
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.image import Image
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 import pywhatkit as kit
 import datetime
