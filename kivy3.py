@@ -20,7 +20,8 @@ Created on Sat Mar  6 21:12:30 2021
 #    from kivy.app import App
 #
 #import kivy 
-  
+ 
+#import packages
 kivy.require("1.9.1") 
 from kivy.app import App 
 from kivy.uix.button import Button 
@@ -31,6 +32,7 @@ import geocoder
 import speech_recognition as sr
 from kivy.core.window import Window
 
+#get time and location
 now = datetime.datetime.now()
 g = geocoder.ip('me')
 
@@ -45,9 +47,7 @@ class ButtonApp(App):
     def build(self): 
         layout = FloatLayout(size=(375, 667))
         Window.clearcolor = (1, 1, 1, 1)
-        btn = Button(#text ="Push Me !", 
-                   #font_size ="20sp", 
-                   #background_color =(0.7, 1, 1, 1), 
+        btn = Button(
                    background_normal = 'breaking_wave-1920x1200.jpg', 
                    color =(0, 1, 1, 1), 
                    size =(32, 32), 
