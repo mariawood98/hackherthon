@@ -11,8 +11,14 @@ Created on Sat Mar  6 22:03:56 2021
 Created on Sat Mar  6 21:12:30 2021
 @author: madeleinejenkins
 """
-
-import kivy 
+#try:
+#    from kivy.app import App
+#except ImportError:
+#    import pip._internal as pip
+#    pip.main(['install', 'kivy'])
+#    from kivy.app import App
+#
+#import kivy 
   
 kivy.require("1.9.1") 
 
@@ -22,6 +28,7 @@ from kivy.uix.scatter import Scatter
 from kivy.uix.label import Label
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.image import Image
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 import pywhatkit as kit
 import datetime
@@ -30,39 +37,48 @@ now = datetime.datetime.now()
 g = geocoder.ip('me')
 import speech_recognition as sr
 import webbrowser as wb 
+from kivy.core.window import Window
+
+#class FirstScreen(Screen):
+#    pass
+# 
+#class SecondScreen(Screen):
+#    pass
 
 class ButtonApp(App): 
     contact_number1 = "+447578477987"
-	contact_number2 = "+447578477987"
+    contact_number2 = "+447578477987"
     awaken_word = "hello"  
-	trigger1 = "jam"
-	trigger2 = "peanut"
+    trigger1 = "jam"
+    trigger2 = "peanut"
     def build(self): 
-        layout = FloatLayout()
-        btn = Button(text ="Push Me !", 
-                   font_size ="20sp", 
-                   background_color =(0.7, 1, 1, 1), 
+        layout = FloatLayout(size=(375, 667))
+        Window.clearcolor = (1, 1, 1, 1)
+        btn = Button(#text ="Push Me !", 
+                   #font_size ="20sp", 
+                   #background_color =(0.7, 1, 1, 1), 
+                   background_normal = 'breaking_wave-1920x1200.jpg', 
                    color =(0, 1, 1, 1), 
                    size =(32, 32), 
-                   size_hint =(.2, .2), 
-                   pos =(300, 500))        
+                   size_hint =(.6, .6), 
+                   pos =(150, 100))        
         btn.bind(on_press = self.callback) 
         layout.add_widget(btn)
-    
-    
+        #t = TextInput(font_size=100,text="default",size_hint_y=None, height=100)
+        #layout.add_widget(t)
         btn2 = Button(text ="Settings", 
                    font_size ="20sp", 
                    background_color =(0.7, 1, 1, 1), 
                    color =(0, 1, 1, 1), 
                    size =(32, 5), 
-                   size_hint =(.2, .2), 
+                   size_hint =(.2, .1), 
                    pos =(300, 20))
         btn2.bind(on_press = self.settings) 
         layout.add_widget(btn2)     
-        img = Image(source='breaking_wave-1920x1200.jpg',
-                    size_hint=(0.6, 0.6),
-                    pos=(200,100))
-        layout.add_widget(img)
+#        img = Image(source='breaking_wave-1920x1200.jpg',
+#                    size_hint=(0.6, 0.6),
+#                    pos=(150,100))
+#        layout.add_widget(img)
         return layout
 
     def settings(self, event):
@@ -79,6 +95,7 @@ class ButtonApp(App):
         print("contact 2 trigger word:")
         self.trigger2 = input()
   
+  
     def callback(self, event): 
         r1 = sr.Recognizer()
         r2 = sr.Recognizer()
@@ -92,9 +109,9 @@ class ButtonApp(App):
             with sr.Microphone() as source:        
                 audio = r2.listen(source)
                 if self.trigger1 in r2.recognize_google(audio):
-                    kit.sendwhatmsg(self.contact_number1, "hi I am scared. my location is: "+str(g.latlng), now.hour, now.minute +2)
+                    kit.sendwhatmsg(self.contact_number1, "hi my location is: "+str(g.latlng), now.hour, now.minute +2)
                 elif self.trigger2 in r2.recognize_google(audio):
-                    kit.sendwhatmsg(self.contact_number2, "hi I am scared. my location is: "+str(g.latlng), now.hour, now.minute +2)
+                    kit.sendwhatmsg(self.contact_number2, "hi my location is: "+str(g.latlng), now.hour, now.minute +2)
 
           
 root = ButtonApp() 
