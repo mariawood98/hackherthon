@@ -1,1 +1,1 @@
-web: gunicorn hackherthon.wsgi --log-file -
+web: gunicorn codefun.wsgi --log-file -
