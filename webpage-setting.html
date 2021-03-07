@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Settings</title>
+
+  </head>
+
+  <body>
+    <button onclick="document.location='webpage-test.html'">Back</button>
+
+    <h2>Calibrate Notification System</h2>
+
+    <img src="https://images.unsplash.com/photo-1568353714643-376f96aa6918?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FsbSUyMHNlYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="turtles" width="900" height="600" style="float:right">
+
+    <form action="./forms.py" method = "post">
+      <label for="contact_name">Contact name 1:</label><br>
+      <input type="text" id="contact_name" name="contact_name" placeholder="Enter your Contact's Name"><br>
+      <label for="contact_number">Contact number:</label><br>
+      <input type="tel" id="contact_number" name="contact_number" placeholder="Enter your Contact's Phone"><br>
+      <label for="trigger_name">Trigger Word:</label><br>
+      <input type="text" id="trigger_name" name="trigger_name" placeholder="Enter trigger word"><br>
+
+      <label for="your_message">Your message:</label><br>
+      <textarea name="your-message" class="form-control" rows="2" placeholder="Enter your Default Warning Message"></textarea><br>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> Include location</label><br><br>
+
+
+      <label for="contact_name">Contact name 1:</label><br>
+      <input type="text" id="contact_name" name="contact_name" placeholder="Enter your Contact's Name"><br>
+      <label for="contact_number">Contact number:</label><br>
+      <input type="tel" id="contact_number" name="contact_number" placeholder="Enter your Contact's Phone"><br>
+      <label for="trigger_name">Trigger Word:</label><br>
+      <input type="text" id="trigger_name" name="trigger_name" placeholder="Enter trigger word"><br>
+
+      <label for="your_message">Your message:</label><br>
+      <textarea name="your-message" class="form-control" rows="2" placeholder="Enter your Default Warning Message"></textarea><br>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> Include location</label><br><br>
+
+      <label for="contact_name">Activation Word:</label><br>
+      <input type="text" id="contact_name" name="contact_name" placeholder="Enter your Activation Word"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+
+  <!--  <form name="myForm" method="post" onsubmit="return validateForm()">
+	<div class="form-group">
+		<label>Your Name</label> <span id="error-name"></span>
+		<input type="text" name="your-name" class="form-control" placeholder="Enter your First Contact's Name">
+	</div>
+  <div class="form-group">
+    <label>Your Phone</label> <span id="error-phone"></span>
+    <input type="text" name="your-phone1" class="form-control" placeholder="Enter your Contact's Phone">
+  </div>
+  <div class="form-group">
+    <label>Your Name</label> <span id="error-name"></span>
+    <input type="text" name="your-name2" class="form-control" placeholder="Enter your Second Contact's Name">
+  </div>
+	<div class="form-group">
+		<label>Your Phone</label> <span id="error-phone"></span>
+		<input type="text" name="your-phone2" class="form-control" placeholder="Enter your Contact's Phone">
+	</div>
+	<div class="form-group">
+		<label>Your Message</label> <span id="error-message"></span>
+		<textarea name="your-message" class="form-control" rows="2" placeholder="Enter your Default Warning Message"></textarea>
+	</div>
+  <div class="form-group">
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> Include location</label><br>
+  </div>
+	<div class="form-group">
+		<input type="submit" value="Send">
+	</div>
+</form>
+
+<script>
+function validateForm(){
+	var name = document.forms["myForm"]["your-name"].value;
+	var email = document.forms["myForm"]["your-email"].value;
+	var phone = document.forms["myForm"]["your-phone"].value;
+	var message = document.forms["myForm"]["your-message"].value;
+
+	if (name.length<1) {
+        document.getElementById('error-name').innerHTML = " Please Enter Your Contact's Name *"
+    }
+    if (email.length<1) {
+        document.getElementById('error-email').innerHTML = " Please Enter Your Contact's Email *";
+    }
+    if (phone.length<1) {
+        document.getElementById('error-phone').innerHTML = " Please Enter Your Contact's Phone *";
+    }
+    if (message.length<1) {
+        document.getElementById('error-message').innerHTML = " Please Enter Your Message *";
+    }
+    if(name.length<1 || email.length<1 || phone.length<1 || message.length<1){
+       	return false;
+    }
+}
+</script> -->
+
+  </body>
+</html>
