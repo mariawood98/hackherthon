@@ -11,16 +11,16 @@ Created on Sat Mar  6 22:03:56 2021
 Created on Sat Mar  6 21:12:30 2021
 @author: madeleinejenkins
 """
-##run the following on star-up in console:
+#run in console on start-up
 #try:
 #    from kivy.app import App
 #except ImportError:
 #    import pip._internal as pip
 #    pip.main(['install', 'kivy'])
 #    from kivy.app import App
+#
 #import kivy 
- 
-#import required modules
+  
 kivy.require("1.9.1") 
 from kivy.app import App 
 from kivy.uix.button import Button 
@@ -31,27 +31,23 @@ import geocoder
 import speech_recognition as sr
 from kivy.core.window import Window
 
-#get the time and the location
 now = datetime.datetime.now()
 g = geocoder.ip('me')
 
-#make the kivy widget
 class ButtonApp(App): 
-  
-    #initialise variables to default settings
     contact_number1 = "+447578477987"
     contact_number2 = "+447578477987"
     awaken_word = "hello"  
     trigger1 = "jam"
     trigger2 = "peanut"
-    
-    #build the buttons
+    message = "Hello I am at these coordinates: "
+    coords_bool = "y"
     def build(self): 
         layout = FloatLayout(size=(375, 667))
         Window.clearcolor = (1, 1, 1, 1)
-        
-        #button 1 for beginning audio
-        btn = Button(
+        btn = Button(#text ="Push Me !", 
+                   #font_size ="20sp", 
+                   #background_color =(0.7, 1, 1, 1), 
                    background_normal = 'breaking_wave-1920x1200.jpg', 
                    color =(0, 1, 1, 1), 
                    size =(32, 32), 
@@ -59,8 +55,6 @@ class ButtonApp(App):
                    pos =(150, 100))        
         btn.bind(on_press = self.callback) 
         layout.add_widget(btn)
-        
-        #button 2 for adjusting settings and changing variables
         btn2 = Button(text ="Settings", 
                    font_size ="20sp", 
                    background_color =(0.7, 1, 1, 1), 
@@ -72,39 +66,50 @@ class ButtonApp(App):
         layout.add_widget(btn2)     
         return layout
 
-    #action when settings button pressed
     def settings(self, event):
         print("type in contact number 1: ")
         self.contact_number1 = input()
         print("type in contact number 2: ")
         self.contact_number2 = input()
 
-        print("type in aactivation word:")
+        print("type in awaken word:")
         self.awaken_word = input()
 
         print("contact 1 trigger word:")
         self.trigger1 = input()
         print("contact 2 trigger word:")
         self.trigger2 = input()
+        
+        print("message to send:")
+        self.message = input()
+        
+        print("do you want to send GPS coordinates y/n?")
+        self.coords_bool = input()
   
-    #action when button 1 pushed
+  
     def callback(self, event): 
         r1 = sr.Recognizer()
         r2 = sr.Recognizer()
         with sr.Microphone() as source:
-             print('hi')
-             print('speak now') #say the activation word
+             print('[hi]')
+             print('speak now')
              audio = r1.listen(source)    
         if self.awaken_word in r2.recognize_google(audio):
             r2 = sr.Recognizer()
-            print("speak again") #say the trigger word
+            print("speak again")
             with sr.Microphone() as source:        
                 audio = r2.listen(source)
                 if self.trigger1 in r2.recognize_google(audio):
-                    kit.sendwhatmsg(self.contact_number1, "hi my location is: "+str(g.latlng), now.hour, now.minute +2) #send whatsapp message to chosen contact with location
+                    if self.coords_bool == "y":
+                        kit.sendwhatmsg(self.contact_number1, self.message+str(g.latlng), now.hour, now.minute +2)
+                    else:
+                        kit.sendwhatmsg(self.contact_number1, self.message, now.hour, now.minute +2)
                 elif self.trigger2 in r2.recognize_google(audio):
-                    kit.sendwhatmsg(self.contact_number2, "hi my location is: "+str(g.latlng), now.hour, now.minute +2) #send whatsapp message to chosen contact with location
+                    if self.coords_bool == "y":
+                        kit.sendwhatmsg(self.contact_number2, self.message+str(g.latlng), now.hour, now.minute +2)
+                    else:
+                        kit.sendwhatmsg(self.contact_number2, self.message, now.hour, now.minute +2)
+
           
 root = ButtonApp() 
-#run the app
 root.run() 
