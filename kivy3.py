@@ -33,13 +33,13 @@ import speech_recognition as sr
 import webbrowser as wb 
 
 class ButtonApp(App): 
-    contact_number1 = 0
-	contact_number2 = 0
-    awaken_word = "x"  
-	trigger1 = "y"
-	trigger2 = "z"
+    contact_number1 = "+447578477987"
+	contact_number2 = "+447578477987"
+    awaken_word = "hello"  
+	trigger1 = "jam"
+	trigger2 = "peanut"
     def build(self): 
-        layout = FloatLayout()#padding=[50, 25, 25, 50], spacing = 30)
+        layout = FloatLayout()
         btn = Button(text ="Push Me !", 
                    font_size ="20sp", 
                    background_color =(0.7, 1, 1, 1), 
@@ -69,13 +69,11 @@ class ButtonApp(App):
     def settings(self, event):
         print("type in contact number 1: ")
         self.contact_number1 = input()
-#        contact1 = contact_number1
         print("type in contact number 2: ")
-        self.contact_number2 = "+447578477987"#input()
+        self.contact_number2 = input()
 
         print("type in awaken word:")
         self.awaken_word = input()
-#        trigger1=awaken_word
 
         print("contact 1 trigger word:")
         self.trigger1 = input()
