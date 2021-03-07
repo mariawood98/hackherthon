@@ -4,4 +4,4 @@ The COVID-19 pandemic has increased incidence of domestic violence and potential
 
 The app allows for the user to set an 'activation' word, 'trigger' words, and the numbers/contacts they would like to communicate with in Settings. When the image button is pressed, the app will start listening. If the activation word, such as 'weather' is heard, the app will wake up and listen further. If a specified trigger word is heard, such as 'sun', a message is sent via Whatsapp to an assigned contact for that trigger word, including the coordinates of the user. 
 
-
+We have also built an alternative front-end HTML website design for the app. 
