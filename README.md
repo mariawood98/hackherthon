@@ -11,3 +11,6 @@ This python program uses Kivy to create an app with two buttons.
 The first, settings, allows the user to specify the contact numbers, activation word, trigger words, and message to send. This user input is typed into the IDE console.
 The second button initiates the app to start listening to audio input to listen out for trigger words when pressed.
 The ButtonApp() class creates the buttons and their functionality.
+
+## webpage-test.html
+This script opens in your browser and provides a front end solution to this app as a demo of what it will look like when we combine functionality with the kivy file. The webpage-setting.html is the second screen where you can input settings for the app.
