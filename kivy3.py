@@ -95,7 +95,7 @@ class ButtonApp(App):
                 if self.trigger1 in r2.recognize_google(audio):
                     kit.sendwhatmsg(self.contact_number1, "hi I am scared. my location is: "+str(g.latlng), now.hour, now.minute +2)
                 elif self.trigger2 in r2.recognize_google(audio):
-                    kit.sendwhatmsg("+447578477987", "hi I am scared. my location is: "+str(g.latlng), now.hour, now.minute +2)
+                    kit.sendwhatmsg(self.contact_number2, "hi I am scared. my location is: "+str(g.latlng), now.hour, now.minute +2)
 
           
 root = ButtonApp() 
