@@ -16,7 +16,7 @@ The ButtonApp() class creates the buttons and their functionality.
 This script opens in your browser and provides a front end solution to this app as a demo of what it will look like when we combine functionality with the kivy file. The webpage-setting.html is the second screen where you can input settings for the app.
 
 ## new_code 
-A version of the kivy button which takes user input within the widget, rather than the interface. this is still in development, so does not have full functionality.
+A version of the kivy button which takes user input within the widget, rather than the interface. This is still in development, so does not have full functionality. 
 
 ## requirements.txt 
 A list of packages required to run the code
