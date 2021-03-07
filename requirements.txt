@@ -4,3 +4,4 @@ pywhatkit
 PyAudio
 pyspeech
 speechrecognition
+geocoder
