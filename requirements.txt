@@ -3,6 +3,6 @@ gunicorn
 django-heroku
 kivy
 pywhatkit
-pyaudio
+PyAudio
 pyspeech
 speechrecognition
