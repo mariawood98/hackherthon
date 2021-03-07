@@ -1,4 +1,4 @@
-# Hack-her-thongs: (insert product name here)
+# Hack-her-thongs: Flare App
 
 The COVID-19 pandemic has increased incidence of domestic violence and potential for women to be trapped in uncomfortable/frightening/abusive situations. We have created an app which allows for inconspicuous contacting of friends, family or the police and asking for help in a way that is hidden from the aggressor. This is done by having the user interface masked as a calming meditation/photos app, and trigger words being typical everyday words used in conversation to not arouse suspicion. 
 
